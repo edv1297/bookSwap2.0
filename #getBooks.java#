@@ -1,0 +1,21 @@
+public class getBooks
+
+public void getInfo(String classInfo){
+    String title = "";
+    String author = "";
+    int ISBN = 0;
+    in = new Scanner(classInfo);
+
+    while(in.hasNext()){
+	int end  = classInfo.indexOf(":");
+	title = in.nextLine().subString(0,end);
+	author = in.nextLine().subString(classInfo.indexOf("Author: "));
+	String temp = in.nextLine().subString(classInfo.indexOf("ISBN: "));
+	System.out.println(temp);
+	ISBN = Integer.parseInt(temp);
+	break;
+    }
+
+}
+
+}
