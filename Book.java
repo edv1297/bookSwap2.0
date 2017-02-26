@@ -1,38 +1,43 @@
 public class Book {
 
-      protected String title;
-      protected String author;
-      protected String isbn;
+    protected String title;
+    protected String author;
+    protected int ISBN;
+    protected double price;
 
+    /*
+     *  BOOK: A book object that stores a book's information
+     *
+     */
+    public Book (String aTitle, String anAuthor, int anISBN, double aPrice) {
+        title = aTitle;
+        author = anAuthor;
+        ISBN = anISBN;
+        price = aPrice;
+    }
 
-      public Book (String aTitle, String anAuthor, String anISBN) {
-          //Edition default of 1?
-          title = aTitle;
-          author = anAuthor;
-          isbn = anISBN;
-      }
+    public String getTitle() {
+        return title;
+    }
 
-      public String getTitle() {
-          return title;
-      }
+    public String getAuthor() {
+        return author;
+    }
 
-      public String getAuthor() {
-          return author;
-      }
+    public int getISBN() {
+        return ISBN;
+    }
 
-      public String getISBN() {
-          return isbn;
-      }
+    public double getPrice() {
+        return price;
+    }
 
-      public String toString() {
-          String s = this.getTitle() + " by " + this.getAuthor() + " (ISBN: " + this.getISBN()+ ")";
-          return s;
-      }
+    public String toString() {
+        return title + " by " + author + " (" + ISBN + ") sells for " + price;
+    }
 
-      public boolean equals (Book b) {
-        if (b.getISBN().equals(isbn)) {
-          return true;
-        }
-        return false;
-      }
-  }
+    public void setPrice (double newPrice) {
+        price = newPrice;
+    }
+}
+ 
